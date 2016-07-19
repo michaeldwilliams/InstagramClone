@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0AE739BBE832FD75C23828B7 /* Pods_InstagramClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3A09E0A4D418A67A1D8967 /* Pods_InstagramClone.framework */; };
+		21A48EC51D3DDD9C00046587 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A48EC41D3DDD9C00046587 /* LoginViewController.swift */; };
 		21BA33EE1D3D9E95004DDD05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BA33ED1D3D9E95004DDD05 /* AppDelegate.swift */; };
 		21BA33F01D3D9E95004DDD05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BA33EF1D3D9E95004DDD05 /* ViewController.swift */; };
 		21BA33F31D3D9E95004DDD05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21BA33F11D3D9E95004DDD05 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21A48EC41D3DDD9C00046587 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		21BA33EA1D3D9E95004DDD05 /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21BA33ED1D3D9E95004DDD05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21BA33EF1D3D9E95004DDD05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				21BA33ED1D3D9E95004DDD05 /* AppDelegate.swift */,
 				21BA33EF1D3D9E95004DDD05 /* ViewController.swift */,
 				21BA33F11D3D9E95004DDD05 /* Main.storyboard */,
+				21A48EC41D3DDD9C00046587 /* LoginViewController.swift */,
 				21BA33F41D3D9E95004DDD05 /* Assets.xcassets */,
 				21BA33F61D3D9E95004DDD05 /* LaunchScreen.storyboard */,
 				21BA33F91D3D9E95004DDD05 /* Info.plist */,
@@ -214,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21A48EC51D3DDD9C00046587 /* LoginViewController.swift in Sources */,
 				21BA33F01D3D9E95004DDD05 /* ViewController.swift in Sources */,
 				21BA33EE1D3D9E95004DDD05 /* AppDelegate.swift in Sources */,
 			);
