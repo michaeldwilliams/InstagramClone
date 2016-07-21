@@ -12,8 +12,11 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
-    
-    let loginSegue = "loginSegue"
+    lazy var ref:FIRDatabaseReference = {
+       let ref = FIRDatabase.database().reference()
+        return ref
+    }()
+    let viewUsersSegue = "viewUsersSegue"
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -26,6 +29,11 @@ class LoginViewController: UIViewController {
         return activityIndicator
     }()
     
+    
+    func createUserInDatabase(withUID uid:String) {
+        let userDict:[String:AnyObject] = ["uid":uid, "email":usernameTextField.text!, "followers":["follower":"", "following":""]]
+        ref.child("users").child(uid).setValue(userDict)
+    }
     
     
     @IBAction func signUp(sender: UIButton) {
@@ -47,8 +55,11 @@ class LoginViewController: UIViewController {
 
             }
             else {
+                if let uid = user?.uid {
+                    self.createUserInDatabase(withUID: uid)
+                }
                 self.activityIndicator.stopAnimating()
-                self.performSegueWithIdentifier(self.loginSegue, sender: self)
+                self.performSegueWithIdentifier(self.viewUsersSegue, sender: self)
                 UIApplication.sharedApplication().endIgnoringInteractionEvents()
                 
             }
@@ -74,7 +85,7 @@ class LoginViewController: UIViewController {
             }
             else {
                 self.activityIndicator.stopAnimating()
-                self.performSegueWithIdentifier(self.loginSegue, sender: self)
+                self.performSegueWithIdentifier(self.viewUsersSegue, sender: self)
                 UIApplication.sharedApplication().endIgnoringInteractionEvents()
                 
             }
@@ -83,6 +94,14 @@ class LoginViewController: UIViewController {
         
         
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if FIRAuth.auth()?.currentUser != nil {
+            self.performSegueWithIdentifier(viewUsersSegue, sender: self)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
